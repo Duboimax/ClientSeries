@@ -9,17 +9,17 @@ namespace ClientSeriesV1.Models
     public class Series
     {
         private int serieId;
-        private string title;
+        private string titre;
         private string resume;
         private int nbSaisons;
         private int nbEpisodes;
         private int anneeCreation;
         private string network;
 
-        public Series(int serieId, string title, string resume, int nbSaisons, int nbEpisodes, int anneeCreation, string network)
+        public Series(int serieId, string titre, string resume, int nbSaisons, int nbEpisodes, int anneeCreation, string network)
         {
             SerieId = serieId;
-            Title = title;
+            Titre = titre;
             Resume = resume;
             NbSaisons = nbSaisons;
             NbEpisodes = nbEpisodes;
@@ -30,7 +30,7 @@ namespace ClientSeriesV1.Models
         public Series() { }
 
         public int SerieId { get => serieId; set => serieId = value; }
-        public string Title { get => title; set => title = value; }
+        public string Titre { get => titre; set => titre = value; }
         public string Resume { get => resume; set => resume = value; }
         public int NbSaisons { get => nbSaisons; set => nbSaisons = value; }
         public int NbEpisodes { get => nbEpisodes; set => nbEpisodes = value; }
@@ -41,7 +41,7 @@ namespace ClientSeriesV1.Models
         {
             return obj is Series series &&
                    SerieId == series.SerieId &&
-                   Title == series.Title &&
+                   Titre == series.titre &&
                    Resume == series.Resume &&
                    NbSaisons == series.NbSaisons &&
                    NbEpisodes == series.NbEpisodes &&
@@ -51,7 +51,7 @@ namespace ClientSeriesV1.Models
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(SerieId, Title, Resume, NbSaisons, NbEpisodes, AnneeCreation, Network);
+            return HashCode.Combine(SerieId, Titre, Resume, NbSaisons, NbEpisodes, AnneeCreation, Network);
         }
     }
 }

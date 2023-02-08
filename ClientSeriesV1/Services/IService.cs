@@ -9,10 +9,10 @@ namespace ClientSeriesV1.Services
 {
     public interface IService
     {
-        Task<Series> GetSeriesAsync(string nomControleur, int id);
-        Task<bool> PutSeriesAsync(string nomControleur);
-        Task<bool> PostSeriesAsync(string nomControleur);
-        Task<bool> DeleteSeriesAsync(string nomControleur);
+        Task<Series> GetSeriesAsync(int id);
+        Task<bool> PutSeriesAsync(int id, Series updateSerie);
+        Task<bool> PostSeriesAsync(string nomController, Series newSerie);
+        Task<bool> DeleteSeriesAsync(int id);
 
     }
 }
