@@ -8,6 +8,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:ClientSeriesV1.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="1900"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
@@ -26,13 +27,14 @@
             Foreground="White"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="label_numSearch"
-            Text="{Binding Id, Mode=TwoWay}" />
+            Text="{Binding IdSerie, Mode=TwoWay}" />
 
         <Button
             x:Name="btnrecherche"
             Width="200"
             Height="35"
             Margin="0,10,0,0"
+            Command="{Binding BtnSearchId}"
             Content="Rechercher"
             FontSize="16"
             Foreground="White"
@@ -53,7 +55,7 @@
             Margin="5"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="TB_Titre"
-            Text="{Binding SerieAdd.Titre, Mode=TwoWay}" />
+            Text="{Binding SeriesSearched.Titre, Mode=TwoWay}" />
         <TextBlock
             Name="TB_Resume"
             Width="250"
@@ -69,7 +71,7 @@
             Margin="5"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="TB_Resume"
-            Text="{Binding SerieAdd.Resume, Mode=TwoWay}" />
+            Text="{Binding SeriesSearched.Resume, Mode=TwoWay}" />
         <TextBlock
             Name="TB_NbSaisons"
             Width="250"
@@ -84,7 +86,7 @@
             Margin="5"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="TB_NbSaisons"
-            Text="{Binding SerieAdd.NbSaisons, Mode=TwoWay}" />
+            Text="{Binding SeriesSearched.NbSaisons, Mode=TwoWay}" />
         <TextBlock
             Name="TB_NbEpisodes"
             Width="250"
@@ -99,7 +101,7 @@
             Margin="5"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="TB_NbEpisodes"
-            Text="{Binding SerieAdd.NbEpisodes, Mode=TwoWay}" />
+            Text="{Binding SeriesSearched.NbEpisodes, Mode=TwoWay}" />
         <TextBlock
             Name="TB_AnneeCreation"
             Width="250"
@@ -114,7 +116,7 @@
             Margin="5"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="TB_AnneeCreation"
-            Text="{Binding SerieAdd.AnneeCreation, Mode=TwoWay}" />
+            Text="{Binding SeriesSearched.AnneeCreation, Mode=TwoWay}" />
         <TextBlock
             Name="TB_Network"
             Width="250"
@@ -129,6 +131,30 @@
             Margin="5"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="TB_Network"
-            Text="{Binding SerieAdd.Network, Mode=TwoWay}" />
+            Text="{Binding SeriesSearched.Network, Mode=TwoWay}" />
+
+        <Button
+            x:Name="btn_modify"
+            Width="200"
+            Height="40"
+            Margin="0,5,350,0"
+            Command="{Binding BtnUpdateId}"
+            Content="Modifier"
+            FontSize="16"
+            Foreground="White"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="TB_Network" />
+
+        <Button
+            x:Name="btn_delete"
+            Width="200"
+            Height="40"
+            Margin="350,5,0,0"
+            Command="{Binding BtnDeleteId}"
+            Content="Supprimer"
+            FontSize="16"
+            Foreground="White"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="TB_Network" />
     </RelativePanel>
 </Page>
