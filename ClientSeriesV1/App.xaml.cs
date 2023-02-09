@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
+using ClientSeriesV1.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -46,8 +47,13 @@ namespace ClientSeriesV1
         {
             m_window = new MainWindow();
             m_window.Activate();
+            Frame rootFrame = new Frame();
+            this.m_window.Content = rootFrame;
+            rootFrame.Navigate(typeof(SearchModiDeleteSerieView));
+            MainRoot = m_window.Content as FrameworkElement;
         }
 
         private Window m_window;
+        public static FrameworkElement MainRoot { get; private set; }
     }
 }

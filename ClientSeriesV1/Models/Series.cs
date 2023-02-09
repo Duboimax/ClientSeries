@@ -27,6 +27,16 @@ namespace ClientSeriesV1.Models
             Network = network;
         }
 
+        public Series( string titre, string resume, int nbSaisons, int nbEpisodes, int anneeCreation, string network)
+        {
+            Titre = titre;
+            Resume = resume;
+            NbSaisons = nbSaisons;
+            NbEpisodes = nbEpisodes;
+            AnneeCreation = anneeCreation;
+            Network = network;
+        }
+
         public Series() { }
 
         public int SerieId { get => serieId; set => serieId = value; }
